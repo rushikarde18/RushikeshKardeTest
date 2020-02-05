@@ -57,6 +57,16 @@ public class EmployeeDataAdapter extends RecyclerView.Adapter<EmployeeDataAdapte
 
             }
         });
+
+
+        employeeViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                removeAt(i);
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -83,4 +93,11 @@ public class EmployeeDataAdapter extends RecyclerView.Adapter<EmployeeDataAdapte
             this.employeeListItemBinding = employeetListItemBinding;
         }
     }
+
+    public void removeAt(int position) {
+        employees.remove(position);
+        notifyItemRemoved(position);
+       notifyDataSetChanged();
+    }
+
 }
