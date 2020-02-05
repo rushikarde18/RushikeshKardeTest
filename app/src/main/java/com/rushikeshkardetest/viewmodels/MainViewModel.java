@@ -11,6 +11,7 @@ import com.rushikeshkardetest.model.Result;
 
 import java.util.List;
 
+//For MVVM
 public class MainViewModel  extends AndroidViewModel {
     private EmployeeRepository employeeRepository;
 
